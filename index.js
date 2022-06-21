@@ -3,7 +3,6 @@ const { TwitterApi } = require("twitter-api-v2")
 const { GoogleSpreadsheet } = require("google-spreadsheet")
 const googleCreds = require("./google_config")
 const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID)
-
 const client = new TwitterApi({
   appKey: process.env.TWITTER_CONSUMER_KEY,
   appSecret: process.env.TWITTER_CONSUMER_SECRET,
@@ -32,5 +31,4 @@ const handleCreateNewTweet = async () => {
     throw e.message
   }
 }
-
 handleCreateNewTweet()
